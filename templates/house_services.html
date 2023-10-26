@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Жилищные услуги</title>
+</head>
+<body>
+	{% for item in info %}
+	<a> {{ item }}</a>
+	{% endfor %}
+	<span class="reg"> <a href="/catalog">Назад</a></span>
+    <span class="reg"> <a href="/">Выход</a></span>
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/catalog.css') }}">
