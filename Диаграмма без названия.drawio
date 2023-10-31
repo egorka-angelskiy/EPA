@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2023-10-31T04:57:12.082Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" version="22.0.8" etag="awCXVZQuj0HNP6cDmLPH" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-31T04:58:37.661Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="hweA3dbcsOMxqg1tTdWq" version="22.0.8" type="github">
   <diagram name="Страница — 1" id="ydNsYoAzzWE7PIhJrhiw">
-    <mxGraphModel>
+    <mxGraphModel dx="724" dy="395" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-2" value="Web-Service" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="180" width="360" height="280" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
