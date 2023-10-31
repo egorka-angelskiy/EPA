@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-31T05:33:34.140Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="vjE8iq5wteiXTqLuEYF0" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-31T05:40:28.705Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="oX2hBP9btEvciGvvcUUW" version="22.0.8" type="github">
   <diagram name="Страница — 1" id="ydNsYoAzzWE7PIhJrhiw">
     <mxGraphModel dx="724" dy="395" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -63,11 +63,34 @@
         <mxCell id="IVdtdNR_76tnPGUoqdaf-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-42" target="IVdtdNR_76tnPGUoqdaf-44">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-42" target="IVdtdNR_76tnPGUoqdaf-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-42" target="IVdtdNR_76tnPGUoqdaf-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-42" target="IVdtdNR_76tnPGUoqdaf-50">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="270" />
+              <mxPoint x="700" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="IVdtdNR_76tnPGUoqdaf-42" value="Взаимодейсвтие" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="560" y="210" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="IVdtdNR_76tnPGUoqdaf-44" value="Чат между клиентом&lt;br&gt;и сотрудниками" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="730" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-46" value="Формирование запроса для устранение проблем клиента" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-48" value="Обратная связь о проделанной работе" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-50" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="320" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
