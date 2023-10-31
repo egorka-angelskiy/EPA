@@ -1,11 +1,39 @@
-<mxfile host="app.diagrams.net" modified="2023-10-31T04:58:37.661Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="hweA3dbcsOMxqg1tTdWq" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-31T05:20:43.547Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="4Y9PFibZMfwBGWvQt9-_" version="22.0.8" type="github">
   <diagram name="Страница — 1" id="ydNsYoAzzWE7PIhJrhiw">
     <mxGraphModel dx="724" dy="395" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="IVdtdNR_76tnPGUoqdaf-2" value="Web-Service" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="170" y="180" width="360" height="280" as="geometry" />
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-2" target="IVdtdNR_76tnPGUoqdaf-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-2" value="Web-Service" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;shadow=1;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.33,0,0,0],[0,0.5,0,0,0],[0,0.67,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" vertex="1" parent="1">
+          <mxGeometry x="370" y="160" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-14" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="435" y="420" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-15" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.74;dx=24.19;direction=north;notch=0;" vertex="1" parent="1">
+          <mxGeometry x="437.5" y="340" width="25" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-22" target="IVdtdNR_76tnPGUoqdaf-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.4;exitY=-0.037;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="IVdtdNR_76tnPGUoqdaf-22" target="IVdtdNR_76tnPGUoqdaf-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="268" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-22" value="БД" style="whiteSpace=wrap;html=1;fontStyle=0;startSize=30;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-28" value="Авторизация/Регистрация" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IVdtdNR_76tnPGUoqdaf-31" value="Базовый каталог услуг ЖКХ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="170" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
