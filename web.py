@@ -83,17 +83,17 @@ def registration():
         
     return render_template('reg.html')
 
-
+#Каталог с услугами
 @app.route('/catalog')
 def catalog():
     return render_template('catalog.html')
 
-
+#Коммунальные услуги
 @app.route('/utility_services')
 def ut_service():
     return render_template('utility_services.html')
 
-
+#Жилищные услуги
 @app.route('/house_services')
 def house_service():
     return render_template(
@@ -101,7 +101,7 @@ def house_service():
         service=CAT_HOUSE_SERVE
     )
 
-
+#Коммуналка(вода)
 @app.route('/water')
 def ut_water_serve():
     return render_template(
@@ -109,7 +109,7 @@ def ut_water_serve():
         service=CAT_UTIL_WATER
     )
 
-
+#Коммуналка(электричество)
 @app.route('/electricity')
 def ut_electr_serve():
     return render_template(
@@ -117,7 +117,7 @@ def ut_electr_serve():
         service=CAT_UTIL_ELECTR
     )
 
-
+#Коммуналка(газ)
 @app.route('/gas')
 def ut_gas_serve():
     return render_template(
