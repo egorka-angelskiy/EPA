@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from data import *
 from db import *
 import re
-
-
 
 app = Flask(__name__)
 
@@ -24,64 +22,44 @@ def home():
 @app.route('/authorization', methods=['GET', 'POST'])
 def authorization():
     if request.method == 'POST':
-        login = request.form.get('Login')
-        password = request.form.get('Password')
+        login = request.form.get('Логин')
+        password = request.form.get('Пароль')
 
-        connect = psycopg2.connect(**originall)
-        cursor = connect.cursor()
-        connect.autocommit = True
+        if Auth(login, password, 'users2'):
+            data = Select(login, 'users2')
+            col = Columns('users2')
 
-        query = f'''select password from "user" where login='{login}' '''
-        cursor.execute(query)
+            area = {col[i][0]: data[i] for i in range(len(data))}
+            return render_template(
+                'home.html'
+            )
 
-        try:
-            password_db = cursor.fetchone()[0]
-        except TypeError:
-            return render_template('auth.html')
-
-        if password_db != password:
-            return render_template('auth.html')
-
-        query = f'''select name from "user" where login='{login}' '''
-        cursor.execute(query)
-        name = cursor.fetchone()[0]
-        return render_template(
-            'home.html',
-            user=name
-        )
-
-    return render_template('auth.html')
+    return render_template('1auth.html')
 
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
-        login = request.form.get('Login')
-        password = request.form.get('Password')
-        name = request.form.get('Name')
+        login = request.form.get('Логин')
 
-        connect = psycopg2.connect(**originall)
-        cursor = connect.cursor()
-        connect.autocommit = True
+        if ExistenceUser(login, 'users2'):
+            print(ExistenceUser(login, 'users2'))
+            Insert(request.form, 'users2')
+            return redirect(url_for('registration2'))
 
-        query = f'''select count(*) from "user" where login='{login}' '''
-        cursor.execute(query)
+        return render_template('1reg.html')
 
-        if cursor.fetchone()[0] != 0:
-            return render_template('reg.html')
+    return render_template('1reg.html')
 
-        if not re.fullmatch(r'[A-Za-z0-9]{10,}', password):
-            return render_template('reg.html')
 
-        query = f'''insert into "user" (login, password, name) values ('{login}', '{password}', '{name}') '''
-        cursor.execute(query)
+@app.route('/registration2', methods=['GET', 'POST'])
+def registration2():
+    if request.method == 'POST':
+        if RegData(request.form):
+            RegData(request.form)
+            return render_template('home.html')
 
-        return render_template(
-            'home.html',
-            user=name
-        )
-        
-    return render_template('reg.html')
+    return render_template('1reg2.html')
 
 #Каталог с услугами
 @app.route('/catalog')
