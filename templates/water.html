@@ -4,8 +4,8 @@
 	<title>Водоснабжение</title>
 </head>
 <body>
-	{% for item in info %}
-	<a> {{ item }}</a>
+	{% for serv, info  in service.items() %}
+	<li title = "{{info}}" > {{serv}}</li>
 	{% endfor %}
 	<span class="reg"> <a href="/utility_services">Назад</a></span>
     <span class="reg"> <a href="/">Выход</a></span>
