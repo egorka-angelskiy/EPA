@@ -1,0 +1,19 @@
+<head>
+	<title>Регистрация</title>
+</head>
+<body>
+	<span class="reg"> <a href="/">Выйти</a></span>
+</body>
+
+<form method="POST">
+	<div class="container">
+		<label for="Login"><b>Логин</b></label>
+		<input type="text" placeholder="" name="Логин" required>
+		<label for="Password"><b>Пароль</b></label>
+		<input type="text" placeholder="" name="Пароль" required>
+        <button type="submit">Далее</button>
+	</div>
+</form>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reg.css') }}">
