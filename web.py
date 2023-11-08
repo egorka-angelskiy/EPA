@@ -98,7 +98,7 @@ def ut_service():
 def house_service():
     return render_template(
         'house_services.html',
-        info=CAT_HOUSE_SERVE
+        service=CAT_HOUSE_SERVE
     )
 
 
@@ -106,7 +106,7 @@ def house_service():
 def ut_water_serve():
     return render_template(
         'water.html',
-        info=CAT_UTIL_WATER
+        service=CAT_UTIL_WATER
     )
 
 
@@ -114,7 +114,7 @@ def ut_water_serve():
 def ut_electr_serve():
     return render_template(
         'electricity.html',
-        info=CAT_UTIL_ELECTR
+        service=CAT_UTIL_ELECTR
     )
 
 
@@ -122,5 +122,5 @@ def ut_electr_serve():
 def ut_gas_serve():
     return render_template(
         'gas.html',
-        info=CAT_UTIL_GAS
+        service=CAT_UTIL_GAS
     )
