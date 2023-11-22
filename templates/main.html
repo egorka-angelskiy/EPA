@@ -2,14 +2,26 @@
 <html>
 <head>
 	<title>Добро пожаловать в ЖКХ!</title>
-	<span class="reg"> <a href="/authorization">Войти</a></span>
-	<span class="reg"> <a href="/registration">Регистрация</a></span>
-	<span class="reg"> <a href="/home">Профиль</a></span>
-	<span class="reg"> <a href="/catalog">Услуги</a></span>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap" rel="stylesheet">
 </head>
 <body>
-
-</body>
+	<!-- <form action = "/catalog"><button>Услуги</button></form>-->
+	
+	<div class = "listing">
+	<form action = "/home"><button>Личный кабинет</button></form>
+	<form action = "/authorization"><button>Регистрация</button></form>
+	<div class = "dropdown"> 
+			<button class = 'dropbtn'>Услуги</button>
+				<div class = "dropdown-content">
+					<a href = "/utility_services"> Коммунальные услуги</a>
+					<a href = "/house_services"> Жилищные услуги</a>
+				</div>
+			</div>
+	</div>
+	<h1 align = 'right'>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
+		</body>
 </html>
-
+	
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
