@@ -1,0 +1,13 @@
+form {
+    text-align: center;             /* расположение по центу */
+}
+
+label {
+    display: block;                 /* расположение друг над другом */
+    padding: 5px;                   /* отступы между полями */
+    text-align: center;
+}
+
+a {
+    display: block;
+}

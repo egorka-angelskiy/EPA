@@ -1,0 +1,25 @@
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Личный кабинет</title>
+</head>
+<body>
+	<h1>Привет, {{ data['name'] }} {{ data['surname'] }}!</h1>
+	<table>
+		{% for key, value in data.items() %}
+   		<tr>
+			{% if key not in ['name', 'surname'] %}
+        	<th> {{ key }} </th>
+        	<td> {{ value }} </td>
+			{% endif %}
+   		</tr>
+		{% endfor %}
+	</table>
+	<span class="reg"> <a href="/">Выйти</a></span>
+</body>
+</html>
+
+<a href="/logout">Выйти из аккаунта</a>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='user/reg.css') }}">

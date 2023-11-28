@@ -1,0 +1,17 @@
+create table users (
+id serial primary key,
+login varchar(100),
+password varchar(100),
+name varchar(100),
+surname varchar(100),
+region varchar(100),
+city varchar(100),
+street varchar(100),
+home varchar(100),
+flat varchar(100),
+entrance varchar(100)
+)
+;
+
+
+alter sequence users_id_seq restart with 1;
