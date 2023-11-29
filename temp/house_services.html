@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Жилищные услуги</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1 align = 'center'>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
+	<div class = "navbar"><a href="/">На главную</a></div>
+	<b>Жилищные услуги:</b>
+	{% for serv, info  in service.items() %}
+	<ul title = "{{info}}" > {{serv}}</ul>
+	{% endfor %}
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
