@@ -9,9 +9,9 @@ def catalog():
     return render_template('service/catalog.html')
 
 
-@service.route('/utility_services')
-def ut_service():
-    return render_template('service/utility_services.html')
+# @service.route('/utility_services')
+# def ut_service():
+#     return render_template('service/utility_services.html')
 
 
 @service.route('/house_services')
@@ -43,4 +43,13 @@ def ut_gas_serve():
     return render_template(
         'service/gas.html',
         service=CAT_UTIL_GAS
+    )
+    
+@service.route('/utility_services')
+def ut_service():
+    return render_template(
+        'service/utility_services.html',
+        water_services = CAT_UTIL_WATER,
+        electricity_services = CAT_UTIL_ELECTR,
+        gas_services = CAT_UTIL_GAS
     )

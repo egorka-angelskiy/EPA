@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for, session, flash, Blueprint
 from db import *
+from functions import *
 
 user = Blueprint('/user', __name__)
 
@@ -16,9 +17,12 @@ def registration():
         if '' in [login, password]:
             return render_template('user/reg.html')
         
-        if check_exists_user(login=login):
+        if check_exists_user(login):
             return render_template('user/reg.html')
         
+        if not check_password(password):
+            return render_template('user/reg.html')
+            
         query = f"""insert into users (login, password) values ({login}, {password})"""
         cursor.execute(query)
         
@@ -38,7 +42,20 @@ def registration():
 def registration2():
     if request.method == 'POST':
         accept_reg(request.form, session['id'])
+        return redirect(url_for('/user.registration3'))
     return render_template('user/reg2.html')
+
+
+@user.route('/registration3', methods=['POST', 'GET'])
+def registration3():
+    if request.method == 'POST':
+        accept_reg(request.form, session['id'])
+        return render_template(
+            'user/choose.html',
+            version='зарегистриоровались'
+        )
+    return render_template('user/reg3.html')
+
 
 
 @user.route('/authurization', methods=['POST', 'GET'])
@@ -49,15 +66,19 @@ def authurization():
         
         query = f"""select password, id from users where login='{login}'"""
         cursor.execute(query)
-        db_password, id = cursor.fetchone()
         
-        print(login, password)
+        db_password, id = cursor.fetchone()
         if password != db_password:
             print('Error password')
             return render_template('user/auth.html')
         
         session['id'] = id
         session['log'] = True
+        
+        return render_template(
+            'user/choose.html',
+            version='вошли в свой аккаунт'
+        )
     return render_template('user/auth.html')
 
 

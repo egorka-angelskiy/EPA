@@ -17,20 +17,21 @@
 </head>
 <body>
 	<!-- <form action = "/catalog"><button>Услуги</button></form>-->
-	
-	<div class = "listing">
-	<form action = "/profile"><button>Личный кабинет</button></form>
-	<form action = "/registration"><button>Регистрация</button></form>
-	<div class = "dropdown"> 
-			<button class = 'dropbtn'>Услуги</button>
-				<div class = "dropdown-content">
-					<a href = "/utility_services"> Коммунальные услуги</a>
-					<a href = "/house_services"> Жилищные услуги</a>
-				</div>
-			</div>
+	<h1 align = 'center'>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
+	<div class="navbar">
+ 		<a href="/profile">Личный кабинет</a>
+		<a href="/registration">Регистрация</a>
+  		<a href="/" title = "Новостей пока нет">Новости</a>
+  		<div class="dropdown">
+    		<button class="dropbtn">Услуги</button>
+    		<div class="dropdown-content">
+      			<a href="/utility_services">Коммунальные услуги</a>
+      			<a href="/house_services">Жилищные услуги</a>
+    		</div>
+  		</div> 
 	</div>
-	<h1 align = 'right'>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
-		</body>
+
+</body>
 </html>
 	
 <link rel="stylesheet" href="{{ url_for('static', filename='user/main.css') }}">
