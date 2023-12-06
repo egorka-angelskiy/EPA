@@ -1,16 +1,27 @@
+<html>
+<head>
+    <title>Регистрация</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap" rel="stylesheet">
+</head>
 
-
-<form method="post">
-    <div class="container">
-        <label>Регион<input type='text' placeholder="" name='region'></label>
-        <label>Город<input type='text' placeholder="" name='city'></label>
-        <label>Улица<input type='text' placeholder="" name='street'></label>
-        <label>Дом<input type='text' placeholder="" name='home'></label>
-        <label>Квартира<input type='text' placeholder="" name='flat'></label>
-        <label>Подъезд<input type='text' placeholder="" name='entrance'></label>
+<body>
+	<h1 align = 'center'>Система по предоставлению жилищно-коммунальных услуг</h1>
+	<div class="navbar">
+ 		<a href="/">На главную</a>
+        <h1>Шаг третий: Данные о кваритре</h1>
+	</div>
+    <form method = "post">
+        <label>Регион <input type='text' placeholder="" name='region'></label>
+        <label>Город <input type='text' placeholder="" name='city'></label>
+        <label>Улица <input type='text' placeholder="" name='street'></label>
+        <label>Дом <input type='text' placeholder="" name='home'></label>
+        <label>Квартира <input type='text' placeholder="" name='flat'></label>
+        <label>Подъезд <input type='text' placeholder="" name='entrance'></label>
         <button type="submit">Завершить</button>
-    </div>
-</form>
+    </form>
+</body>
+</html>
 
-<a href="/">Выйти</a>
-<link rel="stylesheet" href="{{ url_for('static', filename='user/reg.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='user/main.css') }}">
