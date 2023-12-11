@@ -1,9 +1,14 @@
 create table users (
-id serial primary key,
-login varchar(100),
+id serial,
+login varchar(100) primary key,
 password varchar(100),
 name varchar(100),
-surname varchar(100),
+surname varchar(100)
+)
+;
+
+create table home (
+login varchar(100) references users(login),
 region varchar(100),
 city varchar(100),
 street varchar(100),
@@ -13,6 +18,9 @@ entrance varchar(100)
 )
 ;
 
-
 alter sequence users_id_seq restart with 1;
-delete from users;
+
+
+select * from users;
+select * from home;
+

@@ -6,42 +6,45 @@ user = Blueprint('/user', __name__)
 
 @user.route('/')
 def home():
+    print(session)
     return render_template('user/home.html')
 
 @user.route('/registration', methods=['POST', 'GET'])
 def registration():
-    if request.method == 'POST':
-        login = request.form.get('login')
-        password = request.form.get('password')
-        
-        if '' in [login, password]:
-            return render_template('user/reg.html')
-        
-        if check_exists_user(login):
-            return render_template('user/reg.html')
-        
-        if not check_password(password):
-            return render_template('user/reg.html')
+    if not session:
+        if request.method == 'POST':
+            login = request.form.get('login')
+            password = request.form.get('password')
             
-        query = f"""insert into users (login, password) values ({login}, {password})"""
-        cursor.execute(query)
-        
-        query = f"""select id from users where login='{login}'"""
-        cursor.execute(query)
-        id = cursor.fetchone()[0]
+            if '' in [login, password]:
+                return render_template('user/reg.html')
             
-        session['log'] = True
-        session['id'] = id
-        
-        return redirect(url_for('/user.registration2'))
+            if check_exists_user(login):
+                return render_template('user/reg.html')
+            
+            if not check_password(password):
+                return render_template('user/reg.html')
+                
+            query = f"""insert into users (login, password) values ('{login}', '{password}')"""
+            cursor.execute(query)
+            
+            query = f"""select id from users where login='{login}'"""
+            cursor.execute(query)
+            id = cursor.fetchone()[0]
+                
+            session['log'] = True
+            session['id'] = id
+            
+            return redirect(url_for('/user.registration2'))
+        return render_template('user/reg.html')
     
-    return render_template('user/reg.html')
+    return render_template('user/home.html')
 
 
 @user.route('/registration2', methods=['POST', 'GET'])
 def registration2():
     if request.method == 'POST':
-        accept_reg(request.form, session['id'])
+        update_reg(request.form, session['id'])
         return redirect(url_for('/user.registration3'))
     return render_template('user/reg2.html')
 
@@ -49,7 +52,10 @@ def registration2():
 @user.route('/registration3', methods=['POST', 'GET'])
 def registration3():
     if request.method == 'POST':
-        accept_reg(request.form, session['id'])
+        query = f"""select login from users where id='{session['id']}'"""
+        cursor.execute(query)
+        login = cursor.fetchone()[0]
+        insert_reg(request.form, login)
         return render_template(
             'user/choose.html',
             version='зарегистриоровались'
@@ -88,21 +94,27 @@ def logout():
    return redirect(url_for('/user.home'))
 
 
-@user.route('/profile')
+@user.route('/profile', methods=['POST', 'GET'])
 def profile():
     if 'log' in session:
         if session['log']:
-            query = f"""select * from users where id='{session['id']}';"""
+            query = f"""select * from users where id={session['id']}"""
             cursor.execute(query)
-            data = cursor.fetchone()[3:]
+            info = cursor.fetchone()
             
-            query = f"""select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'users'"""
+            query = f"""select * from home  where login='{info[2]}';"""
             cursor.execute(query)
-            col = cursor.fetchall()[3:]
+            data = info[3:] + cursor.fetchone()[1:]
+            
+            col = get_col('users')[3:] + get_col('home')[1:]
         
             area = {col[i][0]: data[i] for i in range(len(data))}
             return render_template(
                 'user/profile.html',
                 data=area
             )
+            
+        if request.method == 'POST':
+            print(1)
+            
     return redirect(url_for('/user.authurization'))

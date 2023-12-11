@@ -4,7 +4,7 @@ html {
 button{
     font: 16px Stem-medium, 'Inter', sans-serif; /* шрифт */
     background-color: red; /*Выбираем цвет фона */
-    -webkit-border-radius: 8px; /*Закругление */
+    border-radius: 8px; /*Закругление */
     color: white; /*Выбираем цвет текста*/
     padding: 16px 20px; /*Размер внутренних отступов*/
     margin: 8px 5px;/*Размер внешних отступов*/
