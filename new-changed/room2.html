@@ -1,0 +1,83 @@
+{% extends 'user/base.html' %}{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Чат</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+	<h1 align = 'center'>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
+	<div class="navbar">
+  		<a href="/" title = "Новостей пока нет">Новости</a>
+  		<div class="dropdown">
+    		<button class="dropbtn">Услуги</button>
+    		<div class="dropdown-content">
+      			<a href="/utility_services">Коммунальные услуги</a>
+      			<a href="/house_services">Жилищные услуги</a>
+    		</div>
+  		</div>
+		<div class="account">
+			<a href="/registration">Регистрация</a>
+			<a href="/profile">Личный кабинет</a>
+			<a href="/logout">Выйти из аккаунта</a>
+		</div>
+		<a href="/makeroom">Отключиться</a>
+	</div>
+
+  <div id="room-container">
+  <h1>Ваш диалог:</h1>
+  <h2>Код комнаты: {{room}}</h2>
+  <ul id="messages"></ul>
+  <div id="chat-room-widget">
+    <div id="msgs-container">
+      <ul id="messages"></ul>
+    </div>
+    <div id="message-box">
+      <input type="text" placeholder="Сообщение" id="message-input" name="message" />
+      <button type="submit" id="send-btn" onclick="sendMessage()">Отправить</button>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var socketio = io();
+    socketio.on("message", function (message) { createChatItem(message.message, message.sender) });
+    function createChatItem(message, sender) {
+      var messages = document.getElementById("messages");
+      if (sender === "") {
+        content = `<p class="member-activity">${message}</p>`;
+      } else {
+        var senderIsUser = "{{user}}" === sender;
+        var content = `
+          <li class="message-item ${senderIsUser ? "self-message-item" : "peer-message-item"}">
+              <p>${sender}: ${message}</p>
+              <small class="${senderIsUser ? "muted-text" : "muted-text-white"}">${new Date().toLocaleString()}</small>
+          </li>
+      `;}
+      messages.innerHTML += content;
+    }
+    function sendMessage() {
+      var msgInput = document.getElementById("message-input");
+      if (msgInput.value === "") return;
+      var msg = msgInput.value;
+      socketio.emit("message", { message: msg });
+      msgInput.value = "";
+    }
+  </script>
+
+  {% for message in messages %}
+  <script type="text/javascript">
+    createChatItem("{{message.message}}", "message.sender");
+  </script>
+  {% endfor %}
+  </div>
+
+
+</body>
+</html>
+	
+<link rel="stylesheet" href="{{ url_for('static', filename='user/main.css') }}">
+{% endblock %} 
