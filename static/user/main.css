@@ -60,6 +60,10 @@ button a
 	float: left;
 	overflow: hidden;
   }
+
+  .account {
+	float: right;
+  }
   
   .dropdown .dropbtn {
 	font-size: 16px;  

@@ -8,6 +8,7 @@ surname varchar(100)
 ;
 
 create table home (
+number int,
 login varchar(100) references users(login),
 region varchar(100),
 city varchar(100),
@@ -24,3 +25,4 @@ alter sequence users_id_seq restart with 1;
 select * from users;
 select * from home;
 
+insert into home values ('test', 'Томская область', 'Томск', 'Карпова', '18', '61', '4');

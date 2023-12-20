@@ -1,23 +1,42 @@
-
 <head>
 	<title>Личный кабинет</title>
 </head>
 <body>
-	<h1>Привет, {{ data['name'] }} {{ data['surname'] }}!</h1>
-	<table>
-		{% for key, value in data.items() %}
-   		<tr>
-			{% if key not in ['name', 'surname'] %}
-        	<th> {{ key }} </th>
-        	<td> {{ value }} </td>
-			{% endif %}
-   		</tr>
-		{% endfor %}
-	</table>
-	<span class="reg"> <a href="/">Выйти</a></span>
+    <h1>Привет, {{ user['name'] }} {{ user['surname'] }}!</h1>
+    <table>
+        <tbody>
+            {% for i in range(n) %}
+                {% for key, value in data.items() %}
+                <form action="/update" method="post">
+                    <tr>
+                        <th> {{ key }} </th>
+                        <td> <input type='text' name="{{ key }}" value={{ value[i] }}> </td>
+                    </tr>
+                {% endfor %}
+                <td><button type="submit" name='button' value="{{ number_home[i] }}">Update</button></td>
+                </form>
+                <form action='/delete' method='post'>
+                    <td><button type="submit" name='button' value="{{ number_home[i] }}">Delete</button></td>
+                </form>
+            {% endfor %}
+        </tbody>
+    <table>
+    <h2>Добавить еще</h2>
+    <form action="/create" method="post"> 
+		<table>
+			{% for key, value in data.items() %}
+			<tr>
+				<th> {{ key }} </th>
+				<td> <input type='text' name="{{ key }}" placeholder={{ key }}> </td>
+			</tr>
+			{% endfor %}
+		</table>
+		<input type="submit" value="Create"> 
+	</form>
 </body>
 
 
-<a href="/logout">Выйти из аккаунта</a>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='user/reg.css') }}">
+<span class="exit"> <a href="/logout">Выйти из аккаунта</a> </span>
+<span class="reg"> <a href="/">Выйти</a></span>
+<span class="token"> <a href="/token">Получить все данные</a></span>
+<link rel="stylesheet" href="{{ url_for('static', filename='user/profile.css') }}">
