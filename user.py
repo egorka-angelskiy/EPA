@@ -58,7 +58,11 @@ def registration3():
         query = f"""select login from users where id='{session['id']}'"""
         cursor.execute(query)
         login = cursor.fetchone()[0]
-        insert_reg(request.form, login)
+        
+        query = f"""select count(*) from home where login='{login}'"""
+        cursor.execute(query)
+        number = cursor.fetchone()[0]
+        insert_reg(request.form, login, number + 1)
         return render_template(
             'user/choose.html',
             version='зарегистриоровались'
@@ -167,7 +171,6 @@ def delete():
         login = cursor.fetchone()[0]
         number = request.form['button']
         
-        print(number)
         query = f"""delete from "home" where login='{login}' and number='{number}'"""
         cursor.execute(query)
         
