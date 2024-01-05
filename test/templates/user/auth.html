@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Вход в систему</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
+	<div class="menu">
+		<div class="exit">
+			<a href="/">Вернуться на главную</a>
+		</div>
+
+		<div class="account">
+			<a href="/registration">Регистрация</a>
+		</div>
+	</div>
+	<form method="post">
+		<label>Логин <input type='text' placeholder="login" id='login' name='login'></label>
+		<label>Пароль <input type='text' placeholder="password" id='password' name='password'></label>
+		<button type='submit'>Далее</button>
+	</form>
+</body>
+</html>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='user/auth.css') }}">

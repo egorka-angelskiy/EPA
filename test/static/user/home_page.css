@@ -1,0 +1,22 @@
+h1 {
+	text-align-last: center;
+}
+
+.menu {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.menu .account a{
+	float: right;
+	color: white;
+	padding: 16px 15px;
+	text-decoration: none;
+}
+
+.menu .services a{
+	float: left;
+	color: white;
+	padding: 16px 15px;
+	text-decoration: none;
+}

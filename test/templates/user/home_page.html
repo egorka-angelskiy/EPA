@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ЖКХ</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>Веб-сервис по предоставлению жилищно-коммунальных услуг</h1>
+	<div class="menu">
+		<div class="account">
+			<a href="/authtorization">Вход в ЛК</a>
+			<a href="/registration">Регистрация</a>
+			<a href="/">Выход из ЛК</a>
+		</div>
+
+		<div class="services">
+			<a href="/">Услуги</a>
+			<a href="/">Связь с администратором</a>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='user/home_page.css') }}">
